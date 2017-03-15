@@ -1,0 +1,442 @@
+@charset "UTF-8";
+
+/*!
+ * Author: Baptiste MOINE <contact@bmoine.fr>
+ * Project: Portfolio Timeline
+ * Homepage: http://www.bmoine.fr/
+ * Released: 21/03/2015
+*/
+
+/***********************
+ * GENERAL
+ * WRAPPER
+***********************/
+
+/* GENERAL
+***********************/
+
+a,
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+    font-style: inherit;
+    font-weight: inherit
+}
+
+article,
+aside,
+audio,
+canvas,
+figcaption,
+figure,
+figure img,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+video {
+    display: block
+}
+
+a img {
+    border: 0
+}
+
+ol,
+ul {
+    list-style-type: none
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    /* Alertes Internet Explorer et autres */
+    min-height: 100%; /* normal height */
+    min-height: 100vh; /* viewport-relative height */
+    position: relative;
+    font-size: 10px;
+    /*-webkit-user-select: none;*/
+    /*-ms-user-select: none;*/
+    /*-moz-user-select: none;*/
+    /*user-select: none;*/
+}
+
+body {
+    padding: 0 15px 15px;
+    background-color: #F1F1F1;
+    color: #3E3E3E;
+    direction: ltr;
+    font-family: "Helvetica Neue", Helvetica,Arial, sans-serif;
+    font-size: 14px;
+/*    font-weight: normal; */
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+    text-rendering: optimizelegibility;
+}
+
+body:not([id]) {
+    cursor: auto !important;
+}
+
+*::-moz-selection {
+    color: #FFF;
+    background-color: #218EB4;
+}
+
+*::selection {
+    color: #FFF;
+    background-color: #218EB4;
+}
+
+main {
+    min-height: 200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+/*    font-weight: 200; */
+    line-height: 1
+}
+
+h1 {
+    font-size: 2em;
+/*     font-weight: 400; */
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    letter-spacing: -.7px;
+}
+h1 > .small {
+    font-size: .55em;
+    color: #386E81;
+
+}
+
+h2 {
+    font-size: 1.5em;
+/*     font-weight: 400; */
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+
+h3 {
+    font-size: 1.17em;
+/*     font-weight: 400; */
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 1em;
+/*     font-weight: 700; */
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+}
+
+h5 {
+    font-size: 0.83em;
+/*     font-weight: 700; */
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+}
+
+h6 {
+    font-size: 0.67em;
+/*     font-weight: 700; */
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+}
+
+ul ul:not(:last-child),
+ul ol:not(:last-child),
+ul dir:not(:last-child),
+ul menu:not(:last-child),
+ul li:not(:last-child),
+ol ul:not(:last-child),
+ol ol:not(:last-child),
+ol dir:not(:last-child),
+ol menu:not(:last-child),
+ol li:not(:last-child),
+dir ul:not(:last-child),
+dir ol:not(:last-child),
+dir dir:not(:last-child),
+dir menu:not(:last-child),
+dir li:not(:last-child),
+menu ul:not(:last-child),
+menu ol:not(:last-child),
+menu dir:not(:last-child),
+menu menu:not(:last-child),
+menu li:not(:last-child) {
+    list-style-position: inherit;
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+ul,
+ol,
+menu,
+dir {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 40px;
+    display: block;
+}
+
+ul,
+menu,
+dir {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    display: list-item;
+    text-align: match-parent;
+}
+
+.i,
+i {
+    font-style: italic;
+}
+
+.u,
+u {
+    text-decoration: underline;
+}
+
+.b,
+b,
+em {
+    font-weight: 700;
+}
+
+a[href] {
+    color: #126E8E;
+    text-decoration: none;
+    -webkit-transition: all 100ms linear 0s;
+    -moz-transition: all 100ms linear 0s;
+    -ms-transition: all 100ms linear 0s;
+    -o-transition: all 100ms linear 0s;
+    transition: all 100ms linear 0s;
+    -webkit-transition-property: color, background-color;
+    -moz-transition-property: color, background-color;
+    -ms-transition-property: color, background-color;
+    -o-transition-property: color, background-color;
+    transition-property: color, background-color;
+}
+
+a[href]:hover,
+a[href]:hover::after,
+a[href]:hover::before {
+    color: #218EB4;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.6;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.ellipsis {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+table {
+    margin: 15px 0;
+    border-collapse: collapse;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table th,
+table td {
+    border: 1px solid #7E7E7E;
+    padding: 6px 13px;
+}
+
+table tr {
+    border-top: 1px solid #7E7E7E;
+    background-color: #F1F1F1;
+}
+
+table tr:nth-child(2n) {
+    background-color: #D8D8D8;
+}
+
+/* WRAPPER
+***********************/
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.row {
+    position: relative;
+    overflow: hidden;
+}
+
+div[class^="col\-"] {
+    position: relative;
+    min-height: 1px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 15px;
+    -webkit-transition: width .2s ease;
+    -o-transition: width .2s ease;
+    transition: width .2s ease;
+}
+
+.col-s-1 {
+    width: 8.33333333%;
+}
+
+.col-s-2 {
+    width: 16.66666667%;
+}
+
+.col-s-3 {
+    width: 25%;
+}
+
+.col-s-4 {
+    width: 33.33333333%;
+}
+
+.col-s-5 {
+    width: 41.66666667%;
+}
+
+.col-s-6 {
+    width: 50%;
+}
+
+.col-s-7 {
+    width: 58.33333333%;
+}
+
+.col-s-8 {
+    width: 66.66666667%;
+}
+
+.col-s-9 {
+    width: 75%;
+}
+
+.col-s-10 {
+    width: 83.33333333%;
+}
+
+.col-s-11 {
+    width: 91.66666667%;
+}
+
+.col-s-12 {
+    width: 100%;
+}
